@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import clsx from "clsx";
+
+import logo from "../../public/logo-white.png";
 
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNav = () => setIsOpen(!isOpen);
+
   return (
-    <nav className="bg-white shadow dark:bg-gray-800">
+    <nav className="shadow bg-gray-900">
       <div className="container px-6 py-3 mx-auto md:flex">
         <div className="flex items-center justify-between">
           <div>
-            <a
-              className="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
-              href="#"
-            >
-              Brand
-            </a>
+            <Link href="/">
+              <a className=" text-2xl font-bold text-white lg:text-3xl">
+                <Image width={118} height={21} src={logo} alt="App Logo" />
+              </a>
+            </Link>
           </div>
 
           <div className="flex md:hidden">
@@ -19,6 +27,7 @@ const Nav = () => {
               type="button"
               className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
               aria-label="toggle menu"
+              onClick={toggleNav}
             >
               <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
                 <path
@@ -29,26 +38,29 @@ const Nav = () => {
             </button>
           </div>
         </div>
-        <div className="w-full md:flex md:items-center md:justify-between">
+        <div
+          className={clsx(
+            "w-full md:flex md:items-center md:justify-between",
+            !isOpen && "hidden"
+          )}
+        >
           <div className="flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0">
-            <a
-              href="#"
-              className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
-            >
-              Contact
-            </a>
+            <Link href="/">
+              <a
+                href="#"
+                className="px-2 py-1 text-sm font-medium text-gray-200 transition-colors duration-200 transform rounded hover:bg-gray-900 hover:text-gray-100 md:mx-2"
+              >
+                Home
+              </a>
+            </Link>
+            <Link href="/profile">
+              <a
+                href="#"
+                className="px-2 py-1 text-sm font-medium text-gray-400 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
+              >
+                Profile
+              </a>
+            </Link>
           </div>
 
           <div className="relative">
@@ -70,7 +82,7 @@ const Nav = () => {
 
             <input
               type="text"
-              className="w-full py-3 pl-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+              className="w-full py-0.5 pl-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-red-light focus:outline-none"
               placeholder="Search"
             />
           </div>
