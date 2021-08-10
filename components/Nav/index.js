@@ -11,7 +11,7 @@ const Nav = () => {
   const toggleNav = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="shadow bg-gray-900">
+    <nav className="fixed top-0 z-50 w-screen shadow bg-transparent">
       <div className="container px-6 py-3 mx-auto md:flex">
         <div className="flex items-center justify-between">
           <div>
@@ -25,7 +25,7 @@ const Nav = () => {
           <div className="flex md:hidden">
             <button
               type="button"
-              className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+              className="text-gray-100 hover:text-red duration-300  focus:outline-none focus:text-red-light "
               aria-label="toggle menu"
               onClick={toggleNav}
             >
@@ -48,7 +48,7 @@ const Nav = () => {
             <Link href="/">
               <a
                 href="#"
-                className="px-2 py-1 text-sm font-medium text-gray-200 transition-colors duration-200 transform rounded hover:bg-gray-900 hover:text-gray-100 md:mx-2"
+                className="px-2 py-1 text-sm font-medium text-gray-200 transition-colors duration-200 transform rounded hover:bg-red-light hover:text-gray-100 md:mx-2"
               >
                 Home
               </a>
@@ -56,7 +56,7 @@ const Nav = () => {
             <Link href="/profile">
               <a
                 href="#"
-                className="px-2 py-1 text-sm font-medium text-gray-400 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
+                className="px-2 py-1 text-sm font-medium text-gray-400 transition-colors duration-200 transform rounded hover:bg-red-light hover:text-gray-100 md:mx-2"
               >
                 Profile
               </a>
