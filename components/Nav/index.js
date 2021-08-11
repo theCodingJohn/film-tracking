@@ -56,7 +56,7 @@ const Nav = () => {
             <Link href="/profile">
               <a
                 href="#"
-                className="px-2 py-1 text-sm font-medium text-gray-400 transition-colors duration-200 transform rounded hover:bg-red-light hover:text-gray-100 md:mx-2"
+                className="px-2 py-1 text-sm font-medium text-gray-200 transition-colors duration-200 transform rounded hover:bg-red-light hover:text-gray-100 md:mx-2"
               >
                 Profile
               </a>

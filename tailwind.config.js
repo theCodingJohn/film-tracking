@@ -12,6 +12,9 @@ module.exports = {
           light: "#EF3D43",
         },
       },
+      borderWidth: {
+        3: "3px",
+      },
     },
     fontFamily: {
       sans: ["Lato", "sans-serif"],
