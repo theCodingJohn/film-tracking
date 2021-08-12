@@ -10,10 +10,10 @@ const ProfileHero = () => {
       <div className="container mx-auto px-6 w-full h-full">
         <div className="absolute w-full h-full bg-gray-900 opacity-70 left-0"></div>
         <div className="w-full h-full flex flex-col justify-center items-center md:flex-row md:justify-between">
-          <div className="text-sm z-10 order-1 uppercase md:py-10 md:order-first md:w-1/4 md:flex md:justify-center md:items-end md:h-full">
+          <div className="text-xs z-10 order-1 md:py-10 md:order-first md:w-1/4 md:flex md:justify-center md:items-end md:h-full">
             <span>Philippines</span>
           </div>
-          <div className="flex flex-col items-center justify-center z-10">
+          <div className="mb-3 md:mb-0 flex flex-col items-center justify-center z-10">
             <div
               style={{
                 backgroundImage:
@@ -25,8 +25,13 @@ const ProfileHero = () => {
               John
             </span>
           </div>
-          <div className="text-sm z-10 uppercase md:py-10 md:w-1/4 md:flex md:justify-center md:items-end md:h-full">
-            <span>The Suicide Squad</span>
+          <div className="text-center text-xs z-10 md:py-10 md:w-1/4 md:flex md:justify-center md:items-end md:h-full">
+            <div className="md:w-8/12 md:truncate">
+              <span className="md:whitespace-nowrap">
+                The Suicide Squad
+                <span className="text-gray-400 ml-1">2001</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
