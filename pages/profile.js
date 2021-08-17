@@ -1,7 +1,6 @@
 import Head from "next/head";
 
-import Nav from "../components/Nav";
-import ProfileHero from "../components/ProfileHero";
+import ProfileLayout from "../components/ProfileLayout";
 
 const profile = () => {
   return (
@@ -9,10 +8,7 @@ const profile = () => {
       <Head>
         <title>Profile</title>
       </Head>
-      <Nav />
-      <main>
-        <ProfileHero />
-      </main>
+      <ProfileLayout></ProfileLayout>
     </>
   );
 };
