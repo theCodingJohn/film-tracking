@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { ClapperBoard } from "../../utils/icons";
+import { DashBoard } from "../../utils/icons";
 
 const SideBar = () => {
   return (
@@ -35,20 +35,22 @@ const SideBar = () => {
         </span>
       </div>
       <div>
-        <SideBarLink icon={<ClapperBoard />} title="Dashboard"></SideBarLink>
+        <SideBarLink icon={<DashBoard />} title="Dashboard"></SideBarLink>
       </div>
     </div>
   );
 };
 
 const SideBarLink = ({ icon, title }) => (
-  <div className="relative flex w-full border-t border-b border-thin h-9 text-gray-200 text-sm">
+  <div className="group relative flex w-full border-t border-b border-thin h-9 text-gray-200 text-sm">
     <Link href="/profile">
       <a className="absolute w-full h-full"></a>
     </Link>
-    <div className="flex items-center w-full py-2 px-8">
-      <div className="mr-6 w-4 text-gray-200">{icon}</div>
-      <span>{title}</span>
+    <div className="group-hover:text-red-light flex items-center w-full py-2 px-8">
+      <div className="group-hover:text-red-light mr-6 w-4 text-gray-200">
+        {icon}
+      </div>
+      <span className="group-hover:text-red-light ">{title}</span>
     </div>
   </div>
 );
