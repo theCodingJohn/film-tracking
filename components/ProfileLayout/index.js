@@ -12,7 +12,7 @@ const ProfileLayout = ({ children }) => {
         <ProfileHero />
         <div
           style={{ minHeight: "calc(100vh - 320px)" }}
-          className="h-full w-full relative"
+          className="h-full w-full relative md:flex"
         >
           <SideBar></SideBar>
           {children}
