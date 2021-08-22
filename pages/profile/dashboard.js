@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-import ProfileLayout from "../components/ProfileLayout";
-import H2 from "../components/H2";
-import FilmCard from "../components/FilmCard";
+import ProfileLayout from "../../components/ProfileLayout";
+import H2 from "../../components/H2";
+import FilmCard from "../../components/FilmCard";
 
-import { favorite_movies } from "../helper";
+import { favorite_movies } from "../../helper";
 
 const profile = () => {
   return (
