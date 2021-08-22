@@ -15,7 +15,7 @@ const ProfileLayout = ({ children }) => {
           className="h-full w-full relative md:flex"
         >
           <SideBar></SideBar>
-          {children}
+          <div>{children}</div>
         </div>
       </main>
     </>

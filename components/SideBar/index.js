@@ -1,9 +1,14 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import clsx from "clsx";
 
 import { DashBoard } from "../../utils/icons";
 
 const SideBar = () => {
+  const router = useRouter();
+  const pathname = router.pathname;
+
   return (
     <div
       style={{ minHeight: "calc(100vh - 320px)" }}
@@ -35,22 +40,38 @@ const SideBar = () => {
         </span>
       </div>
       <div>
-        <SideBarLink icon={<DashBoard />} title="Dashboard"></SideBarLink>
+        <SideBarLink
+          pathname={pathname}
+          icon={<DashBoard />}
+          title="dashboard"
+        ></SideBarLink>
       </div>
     </div>
   );
 };
 
-const SideBarLink = ({ icon, title }) => (
+const SideBarLink = ({ icon, title, pathname }) => (
   <div className="group relative flex w-full border-t border-b border-thin h-9 text-gray-200 text-sm">
     <Link href="/profile">
       <a className="absolute w-full h-full"></a>
     </Link>
     <div className="group-hover:text-red-light flex items-center w-full py-2 px-8">
-      <div className="group-hover:text-red-light mr-6 w-4 text-gray-200">
+      <div
+        className={clsx(
+          "group-hover:text-red-light mr-6 w-4 text-gray-200",
+          pathname === `/profile/${title}` && "text-red-light"
+        )}
+      >
         {icon}
       </div>
-      <span className="group-hover:text-red-light ">{title}</span>
+      <span
+        className={clsx(
+          "group-hover:text-red-light capitalize",
+          pathname === `/profile/${title}` && "text-red-light"
+        )}
+      >
+        {title}
+      </span>
     </div>
   </div>
 );
