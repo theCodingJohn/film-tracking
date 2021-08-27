@@ -12,7 +12,7 @@ const SideBar = () => {
   return (
     <div
       style={{ minHeight: "calc(100vh - 320px)" }}
-      className="h-full w-52 absolute -left-52 md:relative md:left-0"
+      className="h-full w-52 absolute -left-52 xl:relative xl:left-0"
     >
       <button
         type="button"
